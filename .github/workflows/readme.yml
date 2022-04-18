@@ -14,9 +14,10 @@ jobs:
     - uses: actions/checkout@v2
       name: Check out code
 
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v3
+    - name: Sync
+      uses: ms-jpq/sync-dockerhub-readme@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: ilasiaq88/bedrock-action-test
+        readme: "./README.md"
