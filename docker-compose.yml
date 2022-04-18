@@ -2,6 +2,7 @@ version: '3'
 
 services:
    mcpe:
+      container_name: Jaay
       image: ilasiaq88/minecraft-bedrock:1.18.12.01
       ports:
          - 19132:19132/udp
