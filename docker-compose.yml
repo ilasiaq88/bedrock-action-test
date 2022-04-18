@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+   mcpe:
+      image: ilasiaq88/minecraft-bedrock:1.18.12.01
+      ports:
+         - 19132:19132/udp
+      #volumes:
+      #   - mcpe:/data
+      restart: always
+      stdin_open: true
+      tty: true
+      networks: 
+         lan:
+      labels:
+         - traefik.enable=false
+      environment:
+        - "server_name=Lara Server Seed 13"
+        - "gamemode=creative" # "survival", "creative", or "adventure"
+        - "difficulty=easy" #"easy", "normal", or "hard"
+        - "allow_cheats=false" # "true" OR "false"
+        - "online_mode=true" # "true" OR "false"
+        - "default_player_permission_level=member" # "visitor", "member", "operator"
+        - "level_seed=-442812649"
+
+networks: 
+  lan:
+    external: true
+#volumes:
+#  mcpe:
