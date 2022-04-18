@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Docker Build and push
-    - uses: mr-smithers-excellent/docker-build-push@v5
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: ilasiaq88/bedrock-action-test
         registry: docker.io
