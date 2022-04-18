@@ -1,0 +1,21 @@
+name: First Docker CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    uses: mr-smithers-excellent/docker-build-push@v5
+    with:
+      image: ilasiaq88/bedrock-action-test
+      registry: docker.io
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
